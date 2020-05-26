@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Hijacker:{,} - prepare daily DATA</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var s;
+        var img;
+        var fetch = function () {
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:3000/getNounImage",
+                dataType: 'JSON',
+                success: function (response) {
+                    console.log(response);
+                    s = response[0];
+                    img = response[1];
+                    $("#noun").html(s);
+                    $("#theImg").html(`<img src=${img} width="auto" height="600"/>`);
+                },
+            });
+        };
+
+        setInterval(fetch, 10000);
+    </script>
+    <style>
+        #left {
+            float: left;
+            width: 20%;
+            height: 100%;
+            margin-left: 5%;
+            margin-top: 25%;
+            font-size: 30px;
+        }
+
+        #right {
+            float: right;
+            width: 50%;
+            margin-top: 15%;
+            margin-right: 5%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="view">
+        <div id="left">
+            <h1 id="noun">Hello, underworld!!!</h1>
+        </div>
+        <div id="right">
+            <div id="theImg"></div>
+        </div>
+    </div>
+</body>
+
+</html>
