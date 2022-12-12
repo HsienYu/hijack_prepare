@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/HsienYu/hijack_prepare#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "g-i-s": "^2.1.5",
     "sentencer": "^0.2.1"
   }
